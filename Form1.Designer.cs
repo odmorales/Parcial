@@ -40,13 +40,16 @@
             this.TipoBox = new System.Windows.Forms.ComboBox();
             this.GuardarBton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ConsultarBton = new System.Windows.Forms.Button();
+            this.FiltroBox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(121, 71);
+            this.label1.Location = new System.Drawing.Point(149, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 0;
@@ -56,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 106);
+            this.label2.Location = new System.Drawing.Point(90, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 1;
@@ -65,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(105, 143);
+            this.label3.Location = new System.Drawing.Point(130, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +77,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 178);
+            this.label4.Location = new System.Drawing.Point(112, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 3;
@@ -90,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(81, 219);
+            this.label5.Location = new System.Drawing.Point(109, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 5;
@@ -120,33 +123,63 @@
             // TipoBox
             // 
             this.TipoBox.FormattingEnabled = true;
-            this.TipoBox.Location = new System.Drawing.Point(221, 71);
+            this.TipoBox.Location = new System.Drawing.Point(221, 67);
             this.TipoBox.Name = "TipoBox";
             this.TipoBox.Size = new System.Drawing.Size(121, 21);
             this.TipoBox.TabIndex = 9;
             // 
             // GuardarBton
             // 
-            this.GuardarBton.Location = new System.Drawing.Point(506, 214);
+            this.GuardarBton.Location = new System.Drawing.Point(429, 209);
             this.GuardarBton.Name = "GuardarBton";
             this.GuardarBton.Size = new System.Drawing.Size(75, 23);
             this.GuardarBton.TabIndex = 10;
             this.GuardarBton.Text = "Guardar";
             this.GuardarBton.UseVisualStyleBackColor = true;
+            this.GuardarBton.Click += new System.EventHandler(this.GuardarBton_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(87, 279);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 302);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(726, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(745, 185);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // ConsultarBton
+            // 
+            this.ConsultarBton.Location = new System.Drawing.Point(429, 255);
+            this.ConsultarBton.Name = "ConsultarBton";
+            this.ConsultarBton.Size = new System.Drawing.Size(75, 23);
+            this.ConsultarBton.TabIndex = 12;
+            this.ConsultarBton.Text = "Consultar";
+            this.ConsultarBton.UseVisualStyleBackColor = true;
+            // 
+            // FiltroBox
+            // 
+            this.FiltroBox.FormattingEnabled = true;
+            this.FiltroBox.Location = new System.Drawing.Point(221, 255);
+            this.FiltroBox.Name = "FiltroBox";
+            this.FiltroBox.Size = new System.Drawing.Size(121, 21);
+            this.FiltroBox.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(121, 263);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "FiltrarTipo:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 499);
+            this.ClientSize = new System.Drawing.Size(860, 560);
+            this.Controls.Add(this.FiltroBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ConsultarBton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.GuardarBton);
             this.Controls.Add(this.TipoBox);
@@ -181,6 +214,9 @@
         private System.Windows.Forms.ComboBox TipoBox;
         private System.Windows.Forms.Button GuardarBton;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button ConsultarBton;
+        private System.Windows.Forms.ComboBox FiltroBox;
+        private System.Windows.Forms.Label label6;
     }
 }
 

@@ -62,23 +62,27 @@ namespace DAL
 
             lista.Add(donacion);
         }
-        public void ContarPortipo(string tipo)
+        public int ContarPortipo(string tipo)
         {
             lista = Consultar();
 
-            lista.Count(t => t.Tipo.Equals(tipo));
+           return lista.Count(t => t.Tipo.Equals(tipo));
         }
-        public void SumarValorPortipo(string tipo)
+        public double SumarValorPortipo(string tipo)
         {
             lista = Consultar();
 
-            lista.Where(d => d.Tipo.Equals(tipo)).Sum(d => d.ValorDonado);
+           return lista.Where(d => d.Tipo.Equals(tipo)).Sum(d => d.ValorDonado);
         }
         public IList<Donacion> ConsultarPorTipo(string tipo)
         {
             lista = Consultar();
             return lista.Where(t => t.Tipo.Equals(tipo)).ToList();
         }
-        
+        public IList<Donacion> ConsultarPorFecha(int dia,int mes, int año)
+        {
+            lista = Consultar();
+            return lista.Where(l => ((l.FechaPago.Day) == dia && (l.FechaPago.Month == mes) && (l.FechaPago.Year == año))).ToList();
+        }
     }
 }

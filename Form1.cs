@@ -16,6 +16,7 @@ namespace Parcial2
     {
         Donacion donacion;
         DonacionService donacionService;
+        List<Donacion> lista;
         public Form1()
         {
             InitializeComponent();
@@ -42,17 +43,26 @@ namespace Parcial2
         private void ConsultarBton_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-
+            lista = new List<Donacion>();
+            donacionService = new DonacionService();
+            donacion = new Donacion();
             if (FiltroBox.Text.Equals("NiñosFelices"))
             {
-
-            }else if (FiltroBox.Text.Equals("DiscapacitadosActivos"))
+                dataGridView1.DataSource = donacionService.ConsultarPorFecha(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices");
+                TotalText.Text = donacionService.ContarPorTipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
+                ValorTotalText.Text = donacionService.SumarValorPortipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
+            }
+            else if (FiltroBox.Text.Equals("DiscapacitadosActivos"))
             {
-
+                dataGridView1.DataSource = donacionService.ConsultarPorFecha(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "DiscapacitadosActivos");
+                TotalText.Text = donacionService.ContarPorTipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
+                ValorTotalText.Text = donacionService.SumarValorPortipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
             }
             else
             {
-
+                dataGridView1.DataSource = donacionService.ConsultarPorFecha(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "AncianosConCorazon");
+                TotalText.Text = donacionService.ContarPorTipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
+                ValorTotalText.Text = donacionService.SumarValorPortipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
             }
         }
     }

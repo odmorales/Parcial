@@ -23,7 +23,7 @@ namespace DAL
             StreamWriter escritor = new StreamWriter(fileStream);
 
             escritor.WriteLine($"{donacion.Tipo};{donacion.NumeroIdentificacion};{donacion.Nombre};" +
-                $"{donacion.FechaPago.ToString("dd/MM/yyyy")};{donacion.ValorDonado}");
+                $"{donacion.FechaPago};{donacion.ValorDonado}");
 
             escritor.Close();
             fileStream.Close();
@@ -67,23 +67,32 @@ namespace DAL
         {
             lista = Consultar();
 
-           return lista.Where(l => ((l.FechaPago.Day) == dia && (l.FechaPago.Month == mes) && (l.FechaPago.Year == año) && (l.Tipo.Equals(tipo)))).Sum(d => d.ValorDonado);
+            return lista.Where(i => i.FechaPago.Year.Equals(año) && (i.FechaPago.Month.Equals(mes)) && (i.FechaPago.Day.Equals(dia)) && (i.Tipo.Trim().Equals(tipo.Trim()))).Sum(i => i.ValorDonado);
         }
         public int ContarPorTipo(int dia, int mes, int año, string tipo)
         {
             lista = Consultar();
-            return lista.Where(l => ((l.FechaPago.Day) == dia && (l.FechaPago.Month == mes) && (l.FechaPago.Year == año) && (l.Tipo.Equals(tipo)))).Count();
+            return lista.Where(i => i.FechaPago.Year.Equals(año) && (i.FechaPago.Month.Equals(mes)) && (i.FechaPago.Day.Equals(dia)) && (i.Tipo.Trim().Equals(tipo.Trim()))).Count();
         }
         public IList<Donacion> ConsultarPorFecha(int dia,int mes, int año,string tipo)
         {
             lista = Consultar();
-            return lista.Where(l => ((l.FechaPago.Day) == dia && (l.FechaPago.Month == mes) && (l.FechaPago.Year == año) && (l.Tipo.Equals(tipo)))).ToList();
+            return lista.Where(i => i.FechaPago.Year.Equals(año) && (i.FechaPago.Month.Equals(mes)) && (i.FechaPago.Day.Equals(dia)) && (i.Tipo.Trim().Equals(tipo.Trim()))).ToList();
         }
-        public void GuardarPorFiltro(IList<Donacion> donacions,string ruta)
+        public void GuardarFiltro(IList<Donacion> donacions, string tipo, string fecha)
         {
-            StreamWriter escritor = new StreamWriter(ruta, false);
+            string RutaFiltro = tipo.ToUpper() + fecha.ToUpper() + ".txt";
+            StreamWriter escritor = new StreamWriter(RutaFiltro, false);
+            foreach (var donacion in donacions)
+            {
+                escritor.WriteLine($"{donacion.Tipo};" + $"{donacion.FechaPago};");
+                escritor.WriteLine($"{donacion.NumeroIdentificacion};" +
+                                   $"{donacion.Nombre};" +
+                                   $"{donacion.FechaPago};" +
+                                   $"{donacion.ValorDonado}");
+            }
 
-
+            escritor.Close();
         }
     }
 }

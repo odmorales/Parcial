@@ -1,0 +1,11 @@
+DiscapacitadosActivos;6401;Jaun Rocha;01/01/2020;10000
+NiñosFelices;6401;Jaun Rocha;01/01/2020;10000
+DiscapacitadosActivos;6503;Esteban Mendoza;01/01/2020;30000
+AncianosConCorazon;6503;Esteban Mendoza;01/01/2020;30000
+AncianosConCorazon;6507;Facundo Dazs;01/01/2020;30000
+DiscapacitadosActivos;6702;Luz Salas;01/01/2020;50000
+DiscapacitadosActivos;6001;Estefany Armenta;01/01/2020;10000
+NiñosFelices;6403;Camilo Rocha;01/01/2020;10000
+DiscapacitadosActivos;6983;Juan Corredor;01/01/2020;50000
+DiscapacitadosActivos;6002;Patricia Ustariz;01/01/2020;50000
+NiñosFelices;6407;Maria Rocha;01/01/2020;10000

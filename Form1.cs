@@ -38,5 +38,22 @@ namespace Parcial2
             donacion.ValorDonado = Convert.ToDouble(ValorDonadoText.Text);
             donacionService.Guardar(donacion);
         }
+
+        private void ConsultarBton_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+
+            if (FiltroBox.Text.Equals("NiñosFelices"))
+            {
+
+            }else if (FiltroBox.Text.Equals("DiscapacitadosActivos"))
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }

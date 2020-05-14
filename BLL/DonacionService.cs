@@ -25,22 +25,18 @@ namespace BLL
             return donacionRepository.Consultar();
         }
 
-       
-        public int ContarPortipo(string tipo)
+
+        public double SumarValorPortipo(int dia, int mes, int año, string tipo)
         {
-            return donacionRepository.ContarPortipo(tipo);
+            return donacionRepository.SumarValorPortipo(dia, mes, año, tipo);
         }
-        public double SumarValorPortipo(string tipo)
+        public int ContarPorTipo(int dia, int mes, int año, string tipo)
         {
-            return donacionRepository.SumarValorPortipo(tipo);
+            return donacionRepository.ContarPorTipo(dia, mes, año, tipo);
         }
-        public IList<Donacion> ConsultarPorTipo(string tipo)
+        public IList<Donacion> ConsultarPorFecha(int dia, int mes, int año,string tipo)
         {
-            return donacionRepository.ConsultarPorTipo(tipo);
-        }
-        public IList<Donacion> ConsultarPorFecha(int dia, int mes, int año)
-        {
-            return donacionRepository.ConsultarPorFecha(dia, mes, año);
+            return donacionRepository.ConsultarPorFecha(dia, mes, año,tipo);
         }
     }
 }

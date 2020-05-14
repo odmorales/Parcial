@@ -43,6 +43,7 @@
             this.ConsultarBton = new System.Windows.Forms.Button();
             this.FiltroBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.FechaFiltro = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +124,10 @@
             // TipoBox
             // 
             this.TipoBox.FormattingEnabled = true;
+            this.TipoBox.Items.AddRange(new object[] {
+            "NiñosFelices",
+            "DiscapacitadosActivos",
+            "AncianosConCorazon"});
             this.TipoBox.Location = new System.Drawing.Point(221, 67);
             this.TipoBox.Name = "TipoBox";
             this.TipoBox.Size = new System.Drawing.Size(121, 21);
@@ -148,16 +153,21 @@
             // 
             // ConsultarBton
             // 
-            this.ConsultarBton.Location = new System.Drawing.Point(429, 255);
+            this.ConsultarBton.Location = new System.Drawing.Point(616, 255);
             this.ConsultarBton.Name = "ConsultarBton";
             this.ConsultarBton.Size = new System.Drawing.Size(75, 23);
             this.ConsultarBton.TabIndex = 12;
             this.ConsultarBton.Text = "Consultar";
             this.ConsultarBton.UseVisualStyleBackColor = true;
+            this.ConsultarBton.Click += new System.EventHandler(this.ConsultarBton_Click);
             // 
             // FiltroBox
             // 
             this.FiltroBox.FormattingEnabled = true;
+            this.FiltroBox.Items.AddRange(new object[] {
+            "NiñosFelices",
+            "DiscapacitadosActivos",
+            "AncianosConCorazon"});
             this.FiltroBox.Location = new System.Drawing.Point(221, 255);
             this.FiltroBox.Name = "FiltroBox";
             this.FiltroBox.Size = new System.Drawing.Size(121, 21);
@@ -172,11 +182,19 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "FiltrarTipo:";
             // 
+            // FechaFiltro
+            // 
+            this.FechaFiltro.Location = new System.Drawing.Point(382, 255);
+            this.FechaFiltro.Name = "FechaFiltro";
+            this.FechaFiltro.Size = new System.Drawing.Size(200, 20);
+            this.FechaFiltro.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 560);
+            this.Controls.Add(this.FechaFiltro);
             this.Controls.Add(this.FiltroBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ConsultarBton);
@@ -217,6 +235,7 @@
         private System.Windows.Forms.Button ConsultarBton;
         private System.Windows.Forms.ComboBox FiltroBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker FechaFiltro;
     }
 }
 

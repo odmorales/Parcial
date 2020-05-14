@@ -62,27 +62,28 @@ namespace DAL
 
             lista.Add(donacion);
         }
-        public int ContarPortipo(string tipo)
+       
+        public double SumarValorPortipo(int dia, int mes, int año, string tipo)
         {
             lista = Consultar();
 
-           return lista.Count(t => t.Tipo.Equals(tipo));
+           return lista.Where(l => ((l.FechaPago.Day) == dia && (l.FechaPago.Month == mes) && (l.FechaPago.Year == año) && (l.Tipo.Equals(tipo)))).Sum(d => d.ValorDonado);
         }
-        public double SumarValorPortipo(string tipo)
+        public int ContarPorTipo(int dia, int mes, int año, string tipo)
         {
             lista = Consultar();
+            return lista.Where(l => ((l.FechaPago.Day) == dia && (l.FechaPago.Month == mes) && (l.FechaPago.Year == año) && (l.Tipo.Equals(tipo)))).Count();
+        }
+        public IList<Donacion> ConsultarPorFecha(int dia,int mes, int año,string tipo)
+        {
+            lista = Consultar();
+            return lista.Where(l => ((l.FechaPago.Day) == dia && (l.FechaPago.Month == mes) && (l.FechaPago.Year == año) && (l.Tipo.Equals(tipo)))).ToList();
+        }
+        public void GuardarPorFiltro(IList<Donacion> donacions,string ruta)
+        {
+            StreamWriter escritor = new StreamWriter(ruta, false);
 
-           return lista.Where(d => d.Tipo.Equals(tipo)).Sum(d => d.ValorDonado);
-        }
-        public IList<Donacion> ConsultarPorTipo(string tipo)
-        {
-            lista = Consultar();
-            return lista.Where(t => t.Tipo.Equals(tipo)).ToList();
-        }
-        public IList<Donacion> ConsultarPorFecha(int dia,int mes, int año)
-        {
-            lista = Consultar();
-            return lista.Where(l => ((l.FechaPago.Day) == dia && (l.FechaPago.Month == mes) && (l.FechaPago.Year == año))).ToList();
+
         }
     }
 }

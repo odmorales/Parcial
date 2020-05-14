@@ -1,0 +1,16 @@
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\Parcial2.exe.config
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\Parcial2.exe
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\Parcial2.pdb
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\BLL.dll
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\Entity.dll
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\DAL.dll
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\BLL.pdb
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\Entity.pdb
+C:\Users\oscar\source\repos\Parcial2\bin\Debug\DAL.pdb
+C:\Users\oscar\source\repos\Parcial2\obj\Debug\Parcial2.csprojAssemblyReference.cache
+C:\Users\oscar\source\repos\Parcial2\obj\Debug\Parcial2.Form1.resources
+C:\Users\oscar\source\repos\Parcial2\obj\Debug\Parcial2.Properties.Resources.resources
+C:\Users\oscar\source\repos\Parcial2\obj\Debug\Parcial2.csproj.GenerateResource.cache
+C:\Users\oscar\source\repos\Parcial2\obj\Debug\Parcial2.csproj.CopyComplete
+C:\Users\oscar\source\repos\Parcial2\obj\Debug\Parcial2.exe
+C:\Users\oscar\source\repos\Parcial2\obj\Debug\Parcial2.pdb

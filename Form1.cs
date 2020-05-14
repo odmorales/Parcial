@@ -48,9 +48,10 @@ namespace Parcial2
             donacion = new Donacion();
             if (FiltroBox.Text.Equals("NiñosFelices"))
             {
+                dataGridView1.DataSource = donacionService.ConsultarPorFecha(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices");
                 TotalText.Text = donacionService.ContarPorTipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
                 ValorTotalText.Text = donacionService.SumarValorPortipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
-                donacionService.GuardarFiltro(donacionService.ConsultarPorFecha(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices"), "NiñosFelices", FechaFiltro.Value.Date.ToString(), Convert.ToDouble(ValorTotalText.Text), Convert.ToInt32(TotalText.Text));
+                //donacionService.GuardarFiltro(donacionService.ConsultarPorFecha(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices"), "NiñosFelices", FechaFiltro.Value.Date.ToString(), Convert.ToDouble(ValorTotalText.Text), Convert.ToInt32(TotalText.Text));
             }
             else if (FiltroBox.Text.Equals("DiscapacitadosActivos"))
             {

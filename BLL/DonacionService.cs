@@ -27,7 +27,7 @@ namespace BLL
 
         public void GuardarFiltro(IList<Donacion> donacions, string tipo, string fecha, double valor, int total)
         {
-            donacionRepository.GuardarFiltro(donacions, tipo, fecha, valor, total);
+            //donacionRepository.GuardarFiltro(donacions, tipo, fecha, valor, total);
         }
 
         public double SumarValorPortipo(int dia, int mes, int año, string tipo)

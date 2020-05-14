@@ -56,14 +56,14 @@ namespace Parcial2
             else if (FiltroBox.Text.Equals("DiscapacitadosActivos"))
             {
                 dataGridView1.DataSource = donacionService.ConsultarPorFecha(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "DiscapacitadosActivos");
-                TotalText.Text = donacionService.ContarPorTipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
-                ValorTotalText.Text = donacionService.SumarValorPortipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
+                TotalText.Text = donacionService.ContarPorTipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "DiscapacitadosActivos").ToString();
+                ValorTotalText.Text = donacionService.SumarValorPortipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "DiscapacitadosActivos").ToString();
             }
             else
             {
                 dataGridView1.DataSource = donacionService.ConsultarPorFecha(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "AncianosConCorazon");
-                TotalText.Text = donacionService.ContarPorTipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
-                ValorTotalText.Text = donacionService.SumarValorPortipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "NiñosFelices").ToString();
+                TotalText.Text = donacionService.ContarPorTipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "AncianosConCorazon").ToString();
+                ValorTotalText.Text = donacionService.SumarValorPortipo(FechaFiltro.Value.Day, FechaFiltro.Value.Month, FechaFiltro.Value.Year, "AncianosConCorazon").ToString();
             }
         }
     }

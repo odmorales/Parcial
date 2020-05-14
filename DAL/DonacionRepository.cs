@@ -79,13 +79,16 @@ namespace DAL
             lista = Consultar();
             return lista.Where(i => i.FechaPago.Year.Equals(año) && (i.FechaPago.Month.Equals(mes)) && (i.FechaPago.Day.Equals(dia)) && (i.Tipo.Trim().Equals(tipo.Trim()))).ToList();
         }
-        public void GuardarFiltro(IList<Donacion> donacions, string tipo, string fecha)
+        public void GuardarFiltro(IList<Donacion> donacions, string tipo, DateTime fecha,double valor,int total)
         {
-            string RutaFiltro = tipo.ToUpper() + fecha.ToUpper() + ".txt";
+            string RutaFiltro = tipo + fecha + ".txt";
             StreamWriter escritor = new StreamWriter(RutaFiltro, false);
+
+            escritor.WriteLine($"{tipo};{fecha}");
+            escritor.WriteLine($"{valor};{total}");
             foreach (var donacion in donacions)
             {
-                escritor.WriteLine($"{donacion.Tipo};" + $"{donacion.FechaPago};");
+                
                 escritor.WriteLine($"{donacion.NumeroIdentificacion};" +
                                    $"{donacion.Nombre};" +
                                    $"{donacion.FechaPago};" +
